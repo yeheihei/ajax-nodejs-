@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+	</head>
+	<body>
+	</body>
+	<script>
+		$.ajax({
+			type:"POST",
+			url:"http://192.168.0.103:8080/postTest",
+			async:true,
+			dataType : 'json',
+			success:function(res){
+				console.log(res)
+			},
+			error:function(err){
+				console.log(err)
+			}
+		});
+		
+		$.ajax({
+			type:"get",
+			url:"http://192.168.0.103:8080/getTest",
+			async:true,
+			dataType : 'jsonp',
+			data:{
+				name:'tsss'
+			},
+			success:function(res){
+				console.log(res)
+			},
+			error:function(err){
+				console.log(err)
+			}
+		});
+	</script>
+</html>
